@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 interface Options {
   isActive: boolean;
@@ -12,6 +12,8 @@ const getLinkClass = ({ isActive }: Options) =>
   });
 
 export const Navbar = () => {
+  const location = useLocation();
+
   return (
     <nav
       data-cy="nav"
@@ -21,13 +23,13 @@ export const Navbar = () => {
     >
       <div className="container">
         <div className="navbar-brand">
-          <NavLink to="/" className={getLinkClass}>
+          <NavLink to={{ pathname: '/', search: location.search }} className={getLinkClass}>
             Home
           </NavLink>
 
           <NavLink
             aria-current="page"
-            to="/people"
+            to={{ pathname: '/people', search: location.search }}
             end
             className={getLinkClass}
           >

@@ -21,12 +21,12 @@ export const PeopleTable: React.FC<Props> = ({ people, selected }) => {
       return 'fa-sort';
     }
 
-    return order === 'asc' ? 'fa-sort-up' : 'fa-sort-down';
+    return order === 'desc' ? 'fa-sort-down' : 'fa-sort-up';
   };
 
   const getNextSortParams = (column: string) => {
     if (sort !== column) {
-      return { sort: column, order: 'asc' };
+      return  { sort: column, order: null };
     }
 
     if (order === 'asc') {

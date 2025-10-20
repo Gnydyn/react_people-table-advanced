@@ -14,7 +14,7 @@ type Props = {
 
 export const PeopleProvider: React.FC<Props> = ({ children }) => {
   const [people, setPeople] = useState<Person[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
