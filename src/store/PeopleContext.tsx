@@ -4,7 +4,7 @@ import { getPeople } from '../api';
 
 export const PeopleContext = React.createContext({
   people: [] as Person[],
-  isLoading: false,
+  isLoading: true,
   errorMessage: '',
 });
 

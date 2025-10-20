@@ -23,7 +23,10 @@ export const Navbar = () => {
     >
       <div className="container">
         <div className="navbar-brand">
-          <NavLink to={{ pathname: '/', search: location.search }} className={getLinkClass}>
+          <NavLink
+            to={{ pathname: '/' }}
+            className={getLinkClass}
+          >
             Home
           </NavLink>
 

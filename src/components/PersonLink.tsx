@@ -8,14 +8,18 @@ type Props = {
 };
 
 export const PersonLink: React.FC<Props> = ({ person }) => {
-  const searchParams = useSearchParams();
+  const [searchParams] = useSearchParams();
+
   if (!person) {
     return null;
   }
 
   return (
     <Link
-    to={{ pathname: '/people/'+person.slug, search: searchParams.toString() }}
+      to={{
+        pathname: '/people/' + person.slug,
+        search: searchParams.toString(),
+      }}
       className={classNames({ 'has-text-danger': person.sex === 'f' })}
     >
       {person.name}

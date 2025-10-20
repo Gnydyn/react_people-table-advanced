@@ -26,14 +26,14 @@ export const PeopleTable: React.FC<Props> = ({ people, selected }) => {
 
   const getNextSortParams = (column: string) => {
     if (sort !== column) {
-      return  { sort: column, order: null };
+      return { sort: column, order: null };
     }
 
-    if (order === 'asc') {
-      return { sort: column, order: 'desc' };
+    if (order === 'desc') {
+      return { sort: null, order: null };
     }
 
-    return { sort: null, order: null };
+    return { sort: column, order: 'desc' };
   };
 
   return (
